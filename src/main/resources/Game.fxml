@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" style="-fx-background-image: url('/GameBG.jpg'); -fx-background-size: cover; -fx-background-position: center;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
+    <top>
+        <VBox alignment="CENTER" prefHeight="60.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+            <Label fx:id="playerTurnLabel" style="-fx-font-size: 20px; -fx-text-fill: white;" text="Player 1's Turn" />
+            <GridPane fx:id="colButtons" alignment="CENTER" prefHeight="14.0" prefWidth="401.0">
+                <columnConstraints>
+                    <ColumnConstraints hgrow="SOMETIMES" minWidth="100.0" prefWidth="100.0" />
+                    <ColumnConstraints hgrow="SOMETIMES" minWidth="100.0" prefWidth="100.0" />
+                    <ColumnConstraints hgrow="SOMETIMES" minWidth="100.0" prefWidth="100.0" />
+                    <ColumnConstraints hgrow="SOMETIMES" minWidth="100.0" prefWidth="100.0" />
+                </columnConstraints>
+                <rowConstraints>
+                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                </rowConstraints>
+                <VBox.margin>
+                    <Insets left="140.0" right="100.0" top="50.0" />
+                </VBox.margin>
+            </GridPane>
+            <BorderPane.margin>
+                <Insets top="10.0" />
+            </BorderPane.margin>
+        </VBox>
+    </top>
+    <left>
+        <GridPane fx:id="rowButtons" alignment="CENTER" prefHeight="460.0" prefWidth="50.0" BorderPane.alignment="CENTER">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="60.0" prefWidth="50.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="40.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="40.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="40.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="40.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <opaqueInsets>
+                <Insets />
+            </opaqueInsets>
+            <BorderPane.margin>
+                <Insets bottom="30.0" left="50.0" />
+            </BorderPane.margin>
+        </GridPane>
+    </left>
+    <center>
+        <GridPane fx:id="board" alignment="CENTER" BorderPane.alignment="CENTER">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="100.0" prefHeight="100.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="100.0" prefHeight="300.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="100.0" prefHeight="300.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="100.0" prefHeight="300.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <BorderPane.margin>
+                <Insets bottom="50.0" right="100.0" />
+            </BorderPane.margin>
+        </GridPane>
+    </center>
+    <bottom>
+        <HBox alignment="CENTER" prefHeight="40.0" prefWidth="600.0" spacing="20.0" BorderPane.alignment="CENTER">
+         <Button mnemonicParsing="false" onMouseClicked="#handleEndTurn" text="End Turn" />
+            <Button onMouseClicked="#handleChangeCharacters" text="Change Characters" />
+            <Button onMouseClicked="#handleRestartGame" text="Restart Game" />
+        </HBox>
+    </bottom>
+</BorderPane>
